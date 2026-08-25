@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">डर्माएआई</string>
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="language_preferences">भाषा प्राथमिकताएं</string>
+    <string name="auto_detect_language">ऑटो-डिटेक्ट भाषा</string>
+    <string name="auto_detect_description">ऐप टेक्स्ट को आपकी सिस्टम भाषा से मिलाता है</string>
+    <string name="save_changes">बदलाव सहेजें</string>
+
+    <string name="good_morning">शुभ प्रभात,</string>
+    <string name="instant_ai_diagnosis">त्वरित एआई निदान</string>
+    <string name="scanner_description">तत्काल त्वचा स्थिति विश्लेषण के लिए स्कैनर लॉन्च करें।</string>
+    <string name="initialize_scan">स्कैन प्रारंभ करें</string>
+    <string name="select_archives">डिजिटल गैलरी से चुनें</string>
+    <string name="scans_logged">स्कैन लॉग किए गए</string>
+    <string name="system_accuracy">सिस्टम सटीकता</string>
+    <string name="neural_insights">तंत्रिका अंतर्दृष्टि</string>
+    <string name="uv_insight">दैनिक यूवी सूचकांक चरम पर हैं। सुरक्षा प्रोटोकॉल सक्रिय रखें।</string>
+
+    <string name="profile_title">मेरा प्रोफाइल</string>
+    <string name="edit_details">व्यक्तिगत विवरण बदलें</string>
+    <string name="neural_notifications">सूचनाएं</string>
+    <string name="lang_settings">भाषा और ऐप सेटिंग्स</string>
+    <string name="total_scans">कुल स्कैन</string>
+</resources>

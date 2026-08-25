@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DermaAI</string>
+    <string name="settings_title">Settings</string>
+    <string name="language_preferences">Language Preferences</string>
+    <string name="auto_detect_language">Auto Detect Language</string>
+    <string name="auto_detect_description">Matches app text to your system language</string>
+    <string name="save_changes">SAVE CHANGES</string>
+
+    <string name="good_morning">Good Morning,</string>
+    <string name="instant_ai_diagnosis">Instant AI Diagnosis</string>
+    <string name="scanner_description">Launch the neural scanner for immediate skin condition analysis.</string>
+    <string name="initialize_scan">INITIALIZE SCAN</string>
+    <string name="select_archives">Select from digital archives</string>
+    <string name="scans_logged">Scans Logged</string>
+    <string name="system_accuracy">System Accuracy</string>
+    <string name="neural_insights">Neural Insights</string>
+    <string name="uv_insight">Daily UV indices are peaking. Ensure photoprotection protocols are active.</string>
+
+    <string name="profile_title">My Neural Profile</string>
+    <string name="edit_details">Edit Personal Details</string>
+    <string name="neural_notifications">Neural Notifications</string>
+    <string name="lang_settings">Language &amp; App Settings</string>
+    <string name="total_scans">Total Scans</string>
+</resources>

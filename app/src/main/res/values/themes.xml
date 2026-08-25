@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Premium Dark Luxury Theme -->
+    <style name="Base.Theme.DermaCareAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="android:statusBarColor">@color/bg_main</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/bg_main</item>
+        <item name="android:navigationBarColor">@color/bg_main</item>
+    </style>
+
+    <style name="Theme.DermaCareAI" parent="Base.Theme.DermaCareAI" />
+
+    <!-- Glassmorphism Card Style -->
+    <style name="GlassCard">
+        <item name="android:background">@drawable/bg_glass_card</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+</resources>

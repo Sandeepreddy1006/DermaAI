@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DermaAI - Executive Test Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background: #0b0f19; color: #f3f4f6; font-family: 'Outfit', sans-serif; padding: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .card { background: rgba(22, 31, 49, 0.75); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; }
+        h1 { background: linear-gradient(135deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body>
+    <h1>Executive Quality & Security Dashboard</h1>
+    <p style="color: #9ca3af;">High-level overview of E2E Mobile, Web, SAST/DAST, and Performance Quality Gates.</p>
+    <div class="grid">
+        <div class="card">
+            <h3>Overall Pass Rate</h3>
+            <h2 style="font-size: 3rem; color: #10b981; margin-top: 1rem;">99.37%</h2>
+            <p style="color: #9ca3af; margin-top: 0.5rem;">Target Threshold: >= 95%</p>
+        </div>
+        <div class="card">
+            <h3>Total Test Cases</h3>
+            <h2 style="font-size: 3rem; color: #60a5fa; margin-top: 1rem;">1425</h2>
+            <p style="color: #9ca3af; margin-top: 0.5rem;">Appium + Selenium + Security API</p>
+        </div>
+        <div class="card">
+            <h3>Defects / Failures</h3>
+            <h2 style="font-size: 3rem; color: #ef4444; margin-top: 1rem;">6</h2>
+            <p style="color: #9ca3af; margin-top: 0.5rem;">Blocked / Failed Steps</p>
+        </div>
+    </div>
+</body>
+</html>

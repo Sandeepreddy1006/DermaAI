@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ಡರ್ಮಾಏಐ</string>
+    <string name="settings_title">ಸೆಟ್ಟಿಂಗ್ಸ್</string>
+    <string name="language_preferences">ಭಾಷಾ ಆದ್ಯತೆಗಳು</string>
+    <string name="auto_detect_language">ಆಟೋ-ಡಿಟೆಕ್ಟ್ ಭಾಷೆ</string>
+    <string name="auto_detect_description">ಅಪ್ಲಿಕೇಶನ್ ಪಠ್ಯವನ್ನು ನಿಮ್ಮ ಸিস্টಮ್ ಭಾಷೆಗೆ ಹೊಂದಿಸುತ್ತದೆ</string>
+    <string name="save_changes">ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ</string>
+
+    <string name="good_morning">ಶುಭೋದಯ,</string>
+    <string name="instant_ai_diagnosis">ತ್ವರಿತ AI ರೋಗನಿರ್ಣಯ</string>
+    <string name="scanner_description">ತಕ್ಷಣದ ಚರ್ಮದ ಸ್ಥಿತಿ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ಸ್ಕ್ಯಾನರ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿ.</string>
+    <string name="initialize_scan">ಸ್ಕ್ಯಾನ್ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="select_archives">ಗ್ಯಾಲರಿಯಿಂದ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="scans_logged">ದಾಖಲಾದ ಸ್ಕ್ಯಾನ್‌ಗಳು</string>
+    <string name="system_accuracy">ಸಿಸ್ಟಮ್ ನಿಖರತೆ</string>
+    <string name="neural_insights">ಒಳನೋಟಗಳು</string>
+    <string name="uv_insight">ದೈನಂದಿನ ಯುವಿ ಸೂಚ್ಯಂಕಗಳು ಗರಿಷ್ಠ ಮಟ್ಟದಲ್ಲಿವೆ. ರಕ್ಷಣೆ ಸಕ್ರಿಯಗೊಳಿಸಿ.</string>
+
+    <string name="profile_title">ನನ್ನ ಪ್ರೊಫೈಲ್</string>
+    <string name="edit_details">ವೈಯಕ್ತಿಕ ವಿವರಗಳನ್ನು ಸಂಪಾದಿಸಿ</string>
+    <string name="neural_notifications">ಅಧಿಸೂಚನೆಗಳು</string>
+    <string name="lang_settings">ಭಾಷೆ ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
+    <string name="total_scans">ಒಟ್ಟು ಸ್ಕಾನ್‌ಗಳು</string>
+</resources>

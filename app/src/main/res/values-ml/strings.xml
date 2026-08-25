@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ഡെർമഎഐ</string>
+    <string name="settings_title">ക്രമീകരണങ്ങൾ</string>
+    <string name="language_preferences">ഭാഷാ മുൻഗണനകൾ</string>
+    <string name="auto_detect_language">ഓട്ടോ ഡിറ്റക്റ്റ് ഭാഷ</string>
+    <string name="auto_detect_description">ആപ്പ് ടെക്സ്റ്റ് നിങ്ങളുടെ സിസ്റ്റം ഭാഷയുമായി പൊരുത്തപ്പെടുത്തുന്നു</string>
+    <string name="save_changes">മാറ്റങ്ങൾ സംരക്ഷിക്കുക</string>
+
+    <string name="good_morning">സുപ്രഭാതം,</string>
+    <string name="instant_ai_diagnosis">ഉടനടി AI രോഗനിർണയം</string>
+    <string name="scanner_description">ഉടനടി ചർമ്മ അവസ്ഥ വിശകലനത്തിനായി സ്കാനർ ആരംഭിക്കുക.</string>
+    <string name="initialize_scan">സ്കാൻ ആരംഭിക്കുക</string>
+    <string name="select_archives">ഗാലറിയിൽ നിന്ന് തിരഞ്ഞെടുക്കുക</string>
+    <string name="scans_logged">ലോഗ് ചെയ്ത സ്കാനുകൾ</string>
+    <string name="system_accuracy">സിസ്റ്റം കൃത്യത</string>
+    <string name="neural_insights">ന്യൂറൽ ഉൾക്കാഴ്ചകൾ</string>
+    <string name="uv_insight">പ്രതിദിന അൾട്രാവയലറ്റ് സൂചികകൾ ഉയർന്നതാണ്. പ്രതിരോധ നടപടികൾ സ്വീകരിക്കുക.</string>
+
+    <string name="profile_title">എന്റെ പ്രൊഫൈൽ</string>
+    <string name="edit_details">വ്യക്തിഗത വിവരങ്ങൾ എഡിറ്റ് ചെയ്യുക</string>
+    <string name="neural_notifications">അറിയിപ്പുകൾ</string>
+    <string name="lang_settings">ഭാഷയും ആപ്പ് ക്രമീകരണങ്ങളും</string>
+    <string name="total_scans">ആകെ സ്കാനുകൾ</string>
+</resources>

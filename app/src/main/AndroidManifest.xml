@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DermaCareAI"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".auth.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".home.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".home.SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".auth.OnboardingOneActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".auth.OnboardingTwoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".auth.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.VerificationCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.UploadImageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.ScanSkinActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.PreviewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.AnalyzingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.AnalysisResultActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".doctor.DoctorRecommendationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".doctor.NearbySpecialistsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".doctor.DoctorLocationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".doctor.NavigationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".analysis.AnalysisReportActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".home.ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".home.HistoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.InfoDisplayActivity"
+            android:exported="false" />
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.simats.dermacareai.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

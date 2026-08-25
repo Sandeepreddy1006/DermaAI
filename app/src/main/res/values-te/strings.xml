@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">డెర్మాఏఐ</string>
+    <string name="settings_title">సెట్టింగ్స్</string>
+    <string name="language_preferences">భాషా ప్రాధాన్యతలు</string>
+    <string name="auto_detect_language">ఆటో-డిటెక్ట్ లాంగ్వేజ్</string>
+    <string name="auto_detect_description">యాప్ టెక్స్ట్‌ని మీ సిస్టమ్ భాషకు సరిపోల్చండి</string>
+    <string name="save_changes">మార్పులను సేవ్ చేయి</string>
+
+    <string name="good_morning">శుభోదయం,</string>
+    <string name="instant_ai_diagnosis">తక్షణ AI నిర్ధారణ</string>
+    <string name="scanner_description">తక్షణ చర్మ స్థితి విశ్లేషణ కోసం స్కానర్‌ను ప్రారంభించండి.</string>
+    <string name="initialize_scan">స్కాన్ ప్రారంభించండి</string>
+    <string name="select_archives">డిజిటల్ గ్యాలరీ నుండి ఎంచుకోండి</string>
+    <string name="scans_logged">నమోదైన స్కాన్‌లు</string>
+    <string name="system_accuracy">సిస్టమ్ ఖచ్చితత్వం</string>
+    <string name="neural_insights">న్యూరల్ అంతర్దృష్టులు</string>
+    <string name="uv_insight">రోజువారీ UV సూచికలు గరిష్టంగా ఉన్నాయి. సూర్యరశ్మి రక్షణను ఉపయోగించండి.</string>
+
+    <string name="profile_title">నా ప్రొఫೈల్</string>
+    <string name="edit_details">వ్యక్తిగత వివరాలను సవరించండి</string>
+    <string name="neural_notifications">నోటిఫికேషన్‌లు</string>
+    <string name="lang_settings">భాష &amp; యాప్ సెట్టింగ్స్</string>
+    <string name="total_scans">మొత్తం స్కాన్‌లు</string>
+</resources>
