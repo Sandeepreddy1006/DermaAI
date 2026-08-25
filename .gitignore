@@ -9,6 +9,8 @@ captures/
 .cxx/
 backend/venv/
 backend/__pycache__/
+automation/**/__pycache__/
+*.pyc
 backend/dermacare.db
 dermacare.db
 *.zip
