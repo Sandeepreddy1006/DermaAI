@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaCareAI - Intelligent Skin Health Assistant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Connection Status Indicator -->
+    <div id="connection-indicator" class="connection-status online">
+        <span class="status-dot"></span>
+        <span class="status-text">Backend Connected</span>
+    </div>
+
+    <!-- Onboarding / Welcome Screen -->
+    <section id="welcome-view" class="view active">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        
+        <div class="welcome-container">
+            <div class="welcome-header">
+                <div class="logo">
+                    <i class="fa-solid fa-virus-covid brand-logo"></i>
+                    <span>DermaCare<span class="logo-accent">AI</span></span>
+                </div>
+            </div>
+            
+            <div class="onboarding-slider">
+                <div class="slide active">
+                    <div class="slide-illustration">
+                        <div class="scanner-mock">
+                            <i class="fa-solid fa-expand scanner-frame"></i>
+                            <i class="fa-solid fa-shield-halved scanner-core"></i>
+                            <div class="scanner-bar"></div>
+                        </div>
+                    </div>
+                    <h2>Instant AI Diagnosis</h2>
+                    <p>Experience diagnostic precision matching specialized clinical standards in seconds using our neural network.</p>
+                </div>
+                
+                <div class="slide">
+                    <div class="slide-illustration">
+                        <div class="map-mock">
+                            <i class="fa-solid fa-map-location-dot map-icon"></i>
+                            <i class="fa-solid fa-circle-notch radar-ripple"></i>
+                        </div>
+                    </div>
+                    <h2>100km Specialist Radar</h2>
+                    <p>Find verified skincare clinics and dermatology departments near you using live GPS coordinates.</p>
+                </div>
+            </div>
+
+            <div class="slider-dots">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+            </div>
+
+            <div class="welcome-actions">
+                <button class="btn btn-primary" onclick="showView('login-view')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Screen -->
+    <section id="login-view" class="view">
+        <div class="glow-sphere sphere-3"></div>
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="logo center">
+                    <i class="fa-solid fa-virus-covid brand-logo"></i>
+                    <span>DermaCare<span class="logo-accent">AI</span></span>
+                </div>
+                <h3>Welcome Back</h3>
+                <p class="auth-subtitle">Initialize your skin wellness journey</p>
+
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label for="login-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="login-email" required placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="login-password">Password</label>
+                            <a href="#" onclick="showView('forgot-view')" class="forgot-link">Forgot?</a>
+                        </div>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="login-password" required placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </form>
+
+                <p class="auth-footer">
+                    New to DermaCareAI? <a href="#" onclick="showView('register-view')">Create Account</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Screen -->
+    <section id="register-view" class="view">
+        <div class="glow-sphere sphere-4"></div>
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="logo center">
+                    <i class="fa-solid fa-virus-covid brand-logo"></i>
+                    <span>DermaCare<span class="logo-accent">AI</span></span>
+                </div>
+                <h3>Create Account</h3>
+                <p class="auth-subtitle">Join the neural skin protection protocol</p>
+
+                <form id="register-form" onsubmit="handleRegister(event)">
+                    <div class="input-group">
+                        <label for="reg-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user input-icon"></i>
+                            <input type="text" id="reg-name" required placeholder="Dr. John Doe">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="reg-email" required placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="reg-password" required placeholder="•••••••• (Min 6 chars)">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+
+                <p class="auth-footer">
+                    Already have an account? <a href="#" onclick="showView('login-view')">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forgot Password Screen -->
+    <section id="forgot-view" class="view">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="auth-container">
+            <div class="auth-card" id="forgot-step-1">
+                <h3>Forgot Password</h3>
+                <p class="auth-subtitle">Request neural credentials reset code</p>
+
+                <form id="forgot-form" onsubmit="handleForgotPassword(event)">
+                    <div class="input-group">
+                        <label for="forgot-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="forgot-email" required placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Send Reset Code</button>
+                    <button type="button" class="btn btn-outline btn-block mt-12" onclick="showView('login-view')">Back to Login</button>
+                </form>
+            </div>
+
+            <div class="auth-card hidden" id="forgot-step-2">
+                <h3>Reset Password</h3>
+                <p class="auth-subtitle">Check backend logs for the code</p>
+
+                <form id="reset-password-form" onsubmit="handleResetPassword(event)">
+                    <div class="input-group">
+                        <label for="reset-code">Verification Code</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-key input-icon"></i>
+                            <input type="text" id="reset-code" required placeholder="Enter 4-Digit Code">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="new-password">New Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="new-password" required placeholder="New Password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Reset</button>
+                    <button type="button" class="btn btn-outline btn-block mt-12" onclick="showResetStep(1)">Back</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Application View -->
+    <main id="app-view" class="view">
+        <!-- Sidebar Navigation (Desktop) -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-virus-covid brand-logo"></i>
+                <span>DermaAI</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active" onclick="switchTab('home')" data-tab="home">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span data-i18n="nav_dashboard">Dashboard</span>
+                </li>
+                <li class="nav-item" onclick="switchTab('scan')" data-tab="scan">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <span data-i18n="nav_scan">AI Scan</span>
+                </li>
+                <li class="nav-item" onclick="switchTab('history')" data-tab="history">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span data-i18n="nav_history">Scans History</span>
+                </li>
+                <li class="nav-item" onclick="switchTab('specialists')" data-tab="specialists">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span data-i18n="nav_specialists">Specialists</span>
+                </li>
+                <li class="nav-item" onclick="switchTab('profile')" data-tab="profile">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span data-i18n="nav_profile">Profile Settings</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-user" onclick="switchTab('profile')">
+                <img id="sidebar-avatar" src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                <div class="user-meta">
+                    <h4 id="sidebar-username">User</h4>
+                    <p id="sidebar-email">email@example.com</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <!-- Header (Mobile Header & Greeting) -->
+            <header class="app-header">
+                <div class="mobile-logo">
+                    <i class="fa-solid fa-virus-covid brand-logo"></i>
+                    <span>DermaAI</span>
+                </div>
+                <div class="header-greeting">
+                    <span class="greeting-time" id="greeting-time">Good Day,</span>
+                    <h2 class="greeting-user" id="greeting-user">User</h2>
+                </div>
+                <div class="header-actions">
+                    <span id="api-status-badge" class="api-badge"><i class="fa-solid fa-shield-halved"></i> SECURE LINK</span>
+                    <div class="avatar-container" onclick="switchTab('profile')">
+                        <img id="header-avatar" src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tab: Home/Dashboard -->
+            <section id="tab-home" class="app-tab active">
+                <div class="dashboard-grid">
+                    <!-- Glass Banner Scan Card -->
+                    <div class="glass-card banner-card">
+                        <div class="banner-content">
+                            <span class="tag" data-i18n="banner_tag">NEURAL DIAGNOSTICS</span>
+                            <h1 data-i18n="banner_title">Instant AI Skin Analysis</h1>
+                            <p data-i18n="banner_desc">Capture or upload an image of any skin concern. The convolutional neural network will diagnose conditions and output clinical protocols instantly.</p>
+                            <button class="btn btn-secondary" onclick="switchTab('scan')">
+                                <i class="fa-solid fa-bolt"></i> <span data-i18n="btn_init_scanner">Initialize Scanner</span>
+                            </button>
+                        </div>
+                        <div class="banner-art">
+                            <i class="fa-solid fa-brain brain-network"></i>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="stats-row">
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon icon-primary"><i class="fa-solid fa-qrcode"></i></div>
+                            <div class="stat-info">
+                                <h3 id="stat-scans-logged">0</h3>
+                                <p data-i18n="stat_scans_logged">Scans Logged</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon icon-secondary"><i class="fa-solid fa-bullseye"></i></div>
+                            <div class="stat-info">
+                                <h3 data-i18n="stat_high">High</h3>
+                                <p data-i18n="stat_system_accuracy">System Accuracy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Scan Area -->
+                    <div class="glass-card upload-quick-card">
+                        <h3>Quick Upload</h3>
+                        <p class="section-desc">Drag and drop or select an image directly to analyze.</p>
+                        <div class="drop-zone" id="quick-drop-zone" onclick="triggerFileInput('quick-file-input')">
+                            <i class="fa-solid fa-cloud-arrow-up cloud-upload-icon"></i>
+                            <p>Drag files here or <span>browse archives</span></p>
+                            <input type="file" id="quick-file-input" class="hidden" accept="image/*" onchange="handleFileSelect(event)">
+                        </div>
+                    </div>
+
+                    <!-- Neural Insights -->
+                    <div class="glass-card insights-card">
+                        <h3>Neural Insights</h3>
+                        <div class="insight-item">
+                            <span class="insight-bar"></span>
+                            <p>UV radiation index is active. Always wear SPF-30+ protection and perform skin hydration checks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Scan / Camera -->
+            <section id="tab-scan" class="app-tab">
+                <div class="scan-container">
+                    <div class="glass-card scan-main-card">
+                        <div class="scan-header">
+                            <h3>Neural Image Scanner</h3>
+                            <p>Provide a high-quality close-up image of the skin condition.</p>
+                        </div>
+
+                        <!-- Scan Options View -->
+                        <div id="scan-init-state" class="scan-state active">
+                            <div class="scan-options">
+                                <div class="scan-opt-card" onclick="openWebcam()">
+                                    <div class="opt-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                                    <h4>Use Live Webcam</h4>
+                                    <p>Capture frame directly from device video input</p>
+                                </div>
+                                <div class="scan-opt-card" onclick="triggerFileInput('scan-file-input')">
+                                    <div class="opt-icon"><i class="fa-solid fa-images"></i></div>
+                                    <h4>Browse Archives</h4>
+                                    <p>Select skin image from local directory</p>
+                                </div>
+                                <input type="file" id="scan-file-input" class="hidden" accept="image/*" onchange="handleFileSelect(event)">
+                            </div>
+                        </div>
+
+                        <!-- Scan Preview / Upload State -->
+                        <div id="scan-preview-state" class="scan-state hidden">
+                            <div class="preview-box">
+                                <img id="scan-image-preview" src="" alt="Skin Concern Preview">
+                                <div class="preview-overlay">
+                                    <button class="btn-circle" onclick="resetScanState()"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <div class="scan-actions">
+                                <button class="btn btn-outline" onclick="resetScanState()">Cancel</button>
+                                <button class="btn btn-primary" onclick="runAnalysis()"><i class="fa-solid fa-magnifying-glass-chart"></i> Run Neural Scan</button>
+                            </div>
+                        </div>
+
+                        <!-- Analyzing State -->
+                        <div id="scan-loading-state" class="scan-state hidden">
+                            <div class="loader-container">
+                                <div class="circular-spinner">
+                                    <i class="fa-solid fa-shield-halved loader-icon"></i>
+                                    <div class="pulse-ring"></div>
+                                </div>
+                                <h4 class="loader-title">Executing Neural Analysis</h4>
+                                <p class="loader-status" id="loader-status">Syncing synapses...</p>
+                            </div>
+                        </div>
+
+                        <!-- Scan Result State -->
+                        <div id="scan-result-state" class="scan-state hidden">
+                            <div class="result-layout">
+                                <div class="result-hero">
+                                    <div class="result-image-holder">
+                                        <img id="result-skin-img" src="" alt="Analyzed Skin Image">
+                                    </div>
+                                    <div class="result-score-container">
+                                        <div class="score-circle">
+                                            <svg class="progress-ring" width="120" height="120">
+                                                <circle class="progress-ring-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                                                <circle class="progress-ring-bar" id="score-ring" stroke="var(--primary)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                                            </svg>
+                                            <div class="score-text">
+                                                <span id="result-score-val">0%</span>
+                                                <span class="score-lbl">Confidence</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="result-details">
+                                    <div class="result-badge" id="result-condition-title">Skin Concern</div>
+                                    <div class="detail-section">
+                                        <h4><i class="fa-solid fa-circle-info"></i> Clinical Synopsis</h4>
+                                        <p id="result-description">Description of analyzed pathology...</p>
+                                    </div>
+
+                                    <div class="detail-section warning">
+                                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Precautions</h4>
+                                        <p id="result-precautions">Precaution steps to avoid worsening condition...</p>
+                                    </div>
+
+                                    <div class="detail-section info">
+                                        <h4><i class="fa-solid fa-kit-medical"></i> First Aid Protocols</h4>
+                                        <p id="result-firstaid">Immediate first aid instructions...</p>
+                                    </div>
+
+                                    <div class="detail-section recommendation hidden" id="result-specialist-recommendation">
+                                        <h4><i class="fa-solid fa-user-doctor"></i> Recommended Action</h4>
+                                        <p>Based on the detected skin concern, we recommend consulting a dermatologist. Find verified clinics within 100km of your location.</p>
+                                        <button class="btn btn-secondary mt-12 btn-block" onclick="navigateToSpecialists()"><i class="fa-solid fa-map-location-dot"></i> View Nearby Specialists</button>
+                                    </div>
+
+                                    <button class="btn btn-primary mt-20" onclick="resetScanState()">Done & Return</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: History -->
+            <section id="tab-history" class="app-tab">
+                <div class="glass-card">
+                    <div class="section-header">
+                        <h3>Scans Archives</h3>
+                        <p>Access your past AI diagnosis details</p>
+                    </div>
+
+                    <div class="history-controls">
+                        <div class="search-bar">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="history-search" placeholder="Search conditions..." oninput="filterHistory()">
+                        </div>
+                    </div>
+
+                    <div class="history-list" id="history-list-container">
+                        <!-- History items will be dynamically loaded here -->
+                        <div class="empty-state">
+                            <i class="fa-solid fa-notes-medical"></i>
+                            <p>No scans logged in archives yet</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Specialists (Nearby Clinics 100km) -->
+            <section id="tab-specialists" class="app-tab">
+                <div class="specialists-layout">
+                    <!-- Sidebar List -->
+                    <div class="glass-card clinics-card">
+                        <div class="section-header">
+                            <h3>Specialist Radar</h3>
+                            <p>Skin care clinics and hospitals within 100km</p>
+                        </div>
+
+                        <div class="location-banner">
+                            <i class="fa-solid fa-location-crosshairs location-icon"></i>
+                            <div class="location-info">
+                                <h4 id="radar-location-status">Detecting Location...</h4>
+                                <p id="radar-coordinates">0.0000, 0.0000</p>
+                            </div>
+                            <button class="btn-refresh" onclick="refreshSpecialistRadar()"><i class="fa-solid fa-rotate"></i></button>
+                        </div>
+
+                        <div class="clinics-list" id="clinics-list-container">
+                            <!-- Clinics will be dynamically loaded here -->
+                            <div class="loading-clinics">
+                                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                                <p>Scanning nearby nodes...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Preview Container -->
+                    <div class="glass-card map-card">
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h4 id="map-target-name">Dermatology Radar Map</h4>
+                            <p id="map-target-address">Select a clinic from the list to view route directions</p>
+                            <a id="btn-open-navigation" href="#" target="_blank" class="btn btn-secondary mt-16 hidden">
+                                <i class="fa-solid fa-route"></i> Open Navigation Route
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Profile Settings -->
+            <section id="tab-profile" class="app-tab">
+                <div class="profile-layout">
+                    <!-- Left: Profile Info -->
+                    <div class="profile-col-left">
+                        <div class="glass-card profile-card">
+                            <div class="profile-avatar-wrapper">
+                                <div class="avatar-large-container" onclick="triggerAvatarUpload()">
+                                    <img id="profile-avatar" src="placeholder_avatar.png" alt="Profile Picture">
+                                    <div class="avatar-upload-overlay">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                </div>
+                                <input type="file" id="avatar-file-input" class="hidden" accept="image/*" onchange="handleAvatarUpload(event)">
+                            </div>
+                            
+                            <h2 id="profile-fullname">User</h2>
+                            <p id="profile-email-sub" class="profile-email">email@example.com</p>
+
+                            <div class="profile-stats">
+                                <div class="profile-stat-box">
+                                    <h4 id="profile-stat-scans">0</h4>
+                                    <p data-i18n="profile_scans">Total Scans</p>
+                                </div>
+                                <div class="profile-stat-box">
+                                    <h4 id="profile-stat-health">100%</h4>
+                                    <p data-i18n="profile_health">Health Score</p>
+                                </div>
+                                <div class="profile-stat-box">
+                                    <h4 class="text-premium">Premium</h4>
+                                    <p data-i18n="profile_plan">Plan Type</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Language settings matching Android app -->
+                        <div class="glass-card preferences-card mt-24">
+                            <h3 data-i18n="lang_preferences">Language Preferences</h3>
+                            <p class="section-desc" data-i18n="lang_desc">Select translation target for diagnosis reports</p>
+                            
+                            <div class="lang-grid">
+                                <div class="lang-btn active" id="lang-en" onclick="setLanguage('en')">
+                                    <span>English</span>
+                                    <span class="lang-sub">Default</span>
+                                </div>
+                                <div class="lang-btn" id="lang-hi" onclick="setLanguage('hi')">
+                                    <span>हिन्दी</span>
+                                    <span class="lang-sub">Hindi</span>
+                                </div>
+                                <div class="lang-btn" id="lang-te" onclick="setLanguage('te')">
+                                    <span>తెలుగు</span>
+                                    <span class="lang-sub">Telugu</span>
+                                </div>
+                                <div class="lang-btn" id="lang-ta" onclick="setLanguage('ta')">
+                                    <span>தமிழ்</span>
+                                    <span class="lang-sub">Tamil</span>
+                                </div>
+                                <div class="lang-btn" id="lang-kn" onclick="setLanguage('kn')">
+                                    <span>ಕನ್ನಡ</span>
+                                    <span class="lang-sub">Kannada</span>
+                                </div>
+                                <div class="lang-btn" id="lang-ml" onclick="setLanguage('ml')">
+                                    <span>മലയാളം</span>
+                                    <span class="lang-sub">Malayalam</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Forms -->
+                    <div class="profile-col-right">
+                        <div class="glass-card">
+                            <h3>Edit Profile Details</h3>
+                            <p class="section-desc">Keep your medical profile information up to date.</p>
+
+                            <form id="profile-edit-form" onsubmit="handleProfileUpdate(event)" class="mt-20">
+                                <div class="input-group">
+                                    <label for="edit-name">Full Name</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-regular fa-user input-icon"></i>
+                                        <input type="text" id="edit-name" required placeholder="Full Name">
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="edit-email">Email Address</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-regular fa-envelope input-icon"></i>
+                                        <input type="email" id="edit-email" required placeholder="name@example.com">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary mt-20">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Logout / Terminate -->
+                        <div class="glass-card logout-card mt-24">
+                            <h3>Security Settings</h3>
+                            <p class="section-desc">Manage session connection and authentication state.</p>
+                            <button class="btn btn-danger mt-20 btn-block" onclick="handleLogout()">
+                                <i class="fa-solid fa-power-off"></i> Terminate Active Session
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-item active" onclick="switchTab('home')" data-tab="home">
+                <i class="fa-solid fa-house-chimney"></i>
+                <span>Home</span>
+            </div>
+            <div class="bottom-nav-item" onclick="switchTab('scan')" data-tab="scan">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Scan</span>
+            </div>
+            <div class="bottom-nav-item" onclick="switchTab('history')" data-tab="history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </div>
+            <div class="bottom-nav-item" onclick="switchTab('specialists')" data-tab="specialists">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>Specialists</span>
+            </div>
+            <div class="bottom-nav-item" onclick="switchTab('profile')" data-tab="profile">
+                <i class="fa-solid fa-user-gear"></i>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </main>
+
+    <!-- Webcam Capture Modal -->
+    <div class="modal hidden" id="webcam-modal">
+        <div class="modal-overlay" onclick="closeWebcam()"></div>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Live Webcam Input</h3>
+                <button class="btn-close" onclick="closeWebcam()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="webcam-box">
+                <video id="webcam-video" autoplay playsinline></video>
+                <div class="scanner-laser"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeWebcam()">Cancel</button>
+                <button class="btn btn-primary" onclick="captureWebcamFrame()"><i class="fa-solid fa-camera"></i> Capture Photo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Detail Modal -->
+    <div class="modal hidden" id="history-modal">
+        <div class="modal-overlay" onclick="closeHistoryModal()"></div>
+        <div class="modal-card wide">
+            <div class="modal-header">
+                <h3>Diagnostic Archive Details</h3>
+                <button class="btn-close" onclick="closeHistoryModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="history-modal-content">
+                <!-- Details loaded dynamically -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-danger mr-auto" id="btn-delete-archive" onclick="deleteHistoryItemFromModal()"><i class="fa-solid fa-trash"></i> Delete Scan</button>
+                <button class="btn btn-primary" onclick="closeHistoryModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
