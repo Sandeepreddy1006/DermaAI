@@ -29,7 +29,7 @@ object NetworkClient {
         get() = if (isEmulator) {
             "http://10.0.2.2:8000/"
         } else {
-            "http://172.23.51.7:8000/"
+            "http://172.23.50.24:8000/"
         }
 
     private val logging = HttpLoggingInterceptor().apply {

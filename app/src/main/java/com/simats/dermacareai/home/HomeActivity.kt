@@ -151,7 +151,7 @@ class HomeActivity : AppCompatActivity() {
                 || android.os.Build.PRODUCT.contains("vbox86p")
                 || android.os.Build.PRODUCT.contains("emulator")
                 || android.os.Build.PRODUCT.contains("simulator")
-        val baseUrl = if (isEmulator) "http://10.0.2.2:8000/" else "http://172.23.51.7:8000/"
+        val baseUrl = if (isEmulator) "http://10.0.2.2:8000/" else "http://172.23.50.24:8000/"
         val fullUrl = if (url.startsWith("http")) url else baseUrl + url
 
         lifecycleScope.launch(kotlinx.coroutines.Dispatchers.IO) {
