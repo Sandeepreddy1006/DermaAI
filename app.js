@@ -3,7 +3,7 @@ let API_BASE_URL = window.location.origin;
 
 // Auto-detect localhost or direct filesystem preview
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-    API_BASE_URL = "http://localhost:8000";
+    API_BASE_URL = "http://172.23.50.24:8000";
 }
 
 // State variables
